@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taller</title>
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+</head>
+<body>
+    <h1>Esta es la template</h1>
+
+    <hr>
+    {% for i in objeto %}
+    <li><a href="autor/{{i.id}}">{{i.nombre}}</a></li>
+    <ul>
+        {% for u in i.profesion.all %}
+        <li>{{u.nombre}}</li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    <script src="{% static 'script.js' %}" ></script>
+</body>
+</html>

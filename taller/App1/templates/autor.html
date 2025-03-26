@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taller</title>
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+</head>
+<body>
+    <h1>Autor</h1>
+
+    <h2>{{objeto.nombre}}</h2>
+    <ul>
+        {% for i in objeto.frasemodel_set.all %}
+        <li>{{i.cita}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
